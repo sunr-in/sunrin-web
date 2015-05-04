@@ -1,0 +1,14 @@
+{
+  "name": "sunrin",
+  "description": "sunr.in - sunrin",
+  "dependencies": {
+    "calcium": "0.x",
+    "express": "4.x",
+    "serve-static": "1.x",
+    "coffee-script": "1.x",
+    "coffee-middleware": "0.2.x",
+    "node-sass-middleware": "0.5.x"
+  },
+  "main": "app.coffee",
+  "private": true
+}
