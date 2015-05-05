@@ -42,7 +42,7 @@ if typeof config.listen is 'string'
         fs.chmod config.listen, '777', ->
              console.log "Now listening on #{config.listen}"
 
-    fs.exists config.listen, (exists) ->
+    fs.access config.listen, (exists) ->
         if exists then fs.unlink config.listen, c
         else c()
 
