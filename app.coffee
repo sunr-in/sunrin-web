@@ -29,8 +29,9 @@ app.get '/', (req, res) ->
 # /api
 
 app.get '/api/calcium/today', (req, res) ->
+  t = new Date()
   c = calcium.get 'B100000658', (e, d) ->
-    res.jsonp e or d
+    res.jsonp e or d[t.getDate()] or {}
 
 if typeof config.listen is 'string'
   c = ->
