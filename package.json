@@ -10,5 +10,8 @@
     "node-sass-middleware": "0.5.x"
   },
   "main": "app.coffee",
-  "private": true
+  "private": true,
+  "config": {
+    "listen": "/tmp/depot.sock"
+  }
 }
