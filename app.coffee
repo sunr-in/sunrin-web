@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 express = require 'express'
 calcium = require 'calcium'
-fs = require 'calcium'
+fs = require 'fs'
 
 # config (from package.json)
 config = require('./package.json').config
@@ -30,21 +30,17 @@ app.get '/', (req, res) ->
 
 app.get '/api/calcium/today', (req, res) ->
   c = calcium.get 'B100000658', (e, d) ->
-    if e
-      res.jsonp e
-    else
-      res.jsonp d
-
+    res.jsonp e or d
 
 if typeof config.listen is 'string'
-    c = ->
-        app.listen config.listen
-        fs.chmod config.listen, '777', ->
-             console.log "Now listening on #{config.listen}"
+  c = ->
+    app.listen config.listen
+    fs.chmod config.listen, '777', ->
+      console.log "Now listening on #{config.listen}"
 
-    fs.access config.listen, (exists) ->
-        if exists then fs.unlink config.listen, c
-        else c()
+  fs.access config.listen, (error) ->
+    unless error then fs.unlink config.listen, c
+    else c()
 
 else
     app.listen config.listen
