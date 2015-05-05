@@ -1,6 +1,7 @@
 #!/usr/bin/env coffee
 express = require 'express'
 calcium = require 'calcium'
+fs = require 'calcium'
 
 # config (from package.json)
 config = require('./package.json').config
