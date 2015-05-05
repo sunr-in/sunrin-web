@@ -12,6 +12,6 @@
   "main": "app.coffee",
   "private": true,
   "config": {
-    "listen": "/tmp/depot.sock"
+    "listen": "/tmp/sunrin.sock"
   }
 }
