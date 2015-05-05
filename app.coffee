@@ -2,6 +2,9 @@
 express = require 'express'
 calcium = require 'calcium'
 
+# config (from package.json)
+config = require('./package.json').config
+
 # middlewares
 serveStatic = require 'serve-static'
 coffee = require 'coffee-middleware'
@@ -22,4 +25,26 @@ app.use sass
 app.get '/', (req, res) ->
   res.sendFile __dirname + '/index.php'
 
-app.listen '/tmp/sunrin.sock'
+# /api
+
+app.get '/api/calcium/today', (req, res) ->
+  c = calcium.get 'B100000658', (e, d) ->
+    if e
+      res.jsonp e
+    else
+      res.jsonp d
+
+
+if typeof config.listen is 'string'
+    c = ->
+        app.listen config.listen
+        fs.chmod config.listen, '777', ->
+             console.log "Now listening on #{config.listen}"
+
+    fs.exists config.listen, (exists) ->
+        if exists then fs.unlink config.listen, c
+        else c()
+
+else
+    app.listen config.listen
+    console.log "Now listening on #{config.listen}"
