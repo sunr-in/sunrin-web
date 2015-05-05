@@ -21,6 +21,8 @@ app.use coffee
 app.use sass
   src: __dirname + '/src/sass'
   dest: __dirname + '/public/css'
+  prefix: '/css'
+  debug: true
   force: true
 
 app.get '/', (req, res) ->
@@ -28,10 +30,16 @@ app.get '/', (req, res) ->
 
 # /api
 
-app.get '/api/calcium/today', (req, res) ->
+app.get '/api/calcium', (req, res) ->
   t = new Date()
-  c = calcium.get 'B100000658', (e, d) ->
+  calcium.get 'B100000658', (e, d) ->
     res.jsonp e or d[t.getDate()] or {}
+
+app.get '/api/calcium/:year/:month', (req, res) ->
+  calcium.get 'B100000658', req.params.year, req.params.month, (e, d) ->
+    res.jsonp e or d or {}
+
+# listen
 
 if typeof config.listen is 'string'
   c = ->
@@ -44,5 +52,5 @@ if typeof config.listen is 'string'
     else c()
 
 else
-    app.listen config.listen
-    console.log "Now listening on #{config.listen}"
+  app.listen config.listen
+  console.log "Now listening on #{config.listen}"
