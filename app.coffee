@@ -26,7 +26,7 @@ app.use sass
   force: true
 
 app.get '/', (req, res) ->
-  res.sendFile __dirname + '/index.php'
+  res.sendFile __dirname + '/public/index.html'
 
 # /api
 
