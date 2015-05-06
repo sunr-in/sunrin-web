@@ -9,7 +9,7 @@ config = require('./package.json').config
 # middlewares
 serveStatic = require 'serve-static'
 coffee = require 'coffee-middleware'
-sass = require 'node-sass-middleware'
+sass = require 'middlesass'
 
 # init app
 app = express()

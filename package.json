@@ -7,7 +7,7 @@
     "serve-static": "1.x",
     "coffee-script": "1.x",
     "coffee-middleware": "0.2.x",
-    "node-sass-middleware": "0.5.x"
+    "middlesass": "0.5.x"
   },
   "main": "app.coffee",
   "private": true,
