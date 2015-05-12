@@ -1,0 +1,7 @@
+# layout images
+layout/
+
+# unnecessary files
+.DS_Store
+*.map
+**/.sass-cache/

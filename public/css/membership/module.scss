@@ -1,0 +1,83 @@
+/****** membership module ******/
+
+@import 'materialize';
+@import 'master';
+
+$form-color: #ecf0f1;
+
+#welcome {
+	text-align: center;
+	padding: 10% 0 30px;
+	font-size: 20px;
+}
+
+/****** membership card ******/
+.membership-card-wrapper {
+	text-align: center;
+}
+
+.membership-card {
+	display: inline-block;
+	position: relative;
+	width: 220px;
+	padding: 30px 15px 25px;
+	margin: 20px;
+	text-align: center;
+	font-size: 14px;
+	background-color: $form-color;
+	border-radius: 5px;
+}
+
+.membership-card:hover {
+	@include transition(0.3s);
+	@extend .z-depth-1;
+}
+
+.membership-card__select {
+	opacity: 0;
+	position: absolute;
+	top: -2px;
+	right: -2px;
+}
+
+.membership-card:hover .membership-card__select {
+	@include transition(0.3s);
+	opacity: 1;
+}
+
+.membership-card__character {
+	width: 100px;
+	height: 100px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+}
+
+.membership-card__type {
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.membership-card__description {
+	margin-bottom: 10px;
+}
+
+.membership-card__button {
+	width: 100%;
+}
+
+/******* membership form *******/
+.membership-form {
+	max-width: 400px;
+	margin: 50px auto;
+	background-color: $form-color;
+}
+
+.membership-form__header {
+	height: 40px;
+}
+
+.membership-form__form {
+	padding: 20px;
+}

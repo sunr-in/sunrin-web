@@ -1,0 +1,8 @@
+/****** master ******/
+
+@mixin transition ($time) {
+	-webkit-transition: $time ease-out;
+	-moz-transition: $time ease-out;
+	-o-transition: $time ease-out;
+	transition: $time ease-out;
+}
