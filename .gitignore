@@ -1,6 +1,9 @@
 # layout images
 layouts/
 
+# app.js
+app.js
+
 # npm
 node_modules/
 

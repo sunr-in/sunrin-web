@@ -30,6 +30,9 @@ nunjucks.configure 'views',
 app.get '/', (req, res) ->
   res.render 'main/main.html'
 
+app.get '/membership', (req, res) ->
+  res.render 'membership/membership.html'
+
 # /api
 
 app.get '/api/calcium', (req, res) ->
