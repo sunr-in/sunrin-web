@@ -1,6 +1,9 @@
+# layout images
+layouts/
+
+# unnecessary files
 .DS_Store
 Thumbs.db
 Desktop.ini
-
-node_modules
-/public/css/*.css
+*.map
+**/.sass-cache/

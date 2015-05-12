@@ -1,0 +1,24 @@
+/****** main module ******/
+/******
+
+	main card
+
+******/
+.main-card {
+  color: #fff; }
+
+.main-card__top {
+  height: 280px;
+  padding: 20px 0; }
+
+.main-card__top .valign {
+  margin: 0 auto; }
+
+.main-card__top img {
+  max-width: 150px; }
+
+.main-card__bottom {
+  line-height: 40px;
+  text-transform: uppercase; }
+
+/*# sourceMappingURL=module.css.map */
