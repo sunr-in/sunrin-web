@@ -1,9 +1,13 @@
 # layout images
 layouts/
 
+# npm
+node_modules/
+
 # unnecessary files
 .DS_Store
 Thumbs.db
 Desktop.ini
+
 *.map
 **/.sass-cache/
