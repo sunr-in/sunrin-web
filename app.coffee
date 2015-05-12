@@ -22,13 +22,13 @@ app.use sass
   debug: true
   force: true
 
-nunjucks.configure 'views/',
+nunjucks.configure 'views',
   autoescape: true,
   express: app
 
 
 app.get '/', (req, res) ->
-  res.sendFile __dirname + '/public/index.html'
+  res.render 'main/main.html'
 
 # /api
 
