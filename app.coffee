@@ -3,23 +3,18 @@ express = require 'express'
 calcium = require 'calcium'
 fs = require 'fs'
 
-# config (from package.json)
-config = require('./package.json').config
+# config
+config = require './config.json'
 
 # middlewares
 serveStatic = require 'serve-static'
-coffee = require 'coffee-middleware'
-sass = require 'middlesass'
+sass = require 'node-sass-middleware'
 
 # init app
 app = express()
 app.use serveStatic __dirname + '/public'
-app.use coffee
-  src: __dirname + '/src/coffee'
-  dest: __dirname + '/public/js'
-  force: true
 app.use sass
-  src: __dirname + '/src/sass'
+  src: __dirname + '/public/scss'
   dest: __dirname + '/public/css'
   prefix: '/css'
   debug: true
