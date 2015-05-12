@@ -3,5 +3,4 @@ Thumbs.db
 Desktop.ini
 
 node_modules
-/public/css
-/public/js
+/public/css/*.css

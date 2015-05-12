@@ -14,7 +14,7 @@ sass = require 'node-sass-middleware'
 app = express()
 app.use serveStatic __dirname + '/public'
 app.use sass
-  src: __dirname + '/public/scss'
+  src: __dirname + '/public/css'
   dest: __dirname + '/public/css'
   prefix: '/css'
   debug: true
