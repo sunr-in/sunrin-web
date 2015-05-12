@@ -1,0 +1,69 @@
+/****** main theme ******/
+
+/******
+
+	main
+
+******/
+
+
+/****** slider ******/
+#main__slider {
+	background-color: #999999;
+	height: 450px;
+}
+
+/****** magazine ******/
+#main__magazine {
+	background-color: #5f7a85;
+}
+
+#main__magazine .main-card__bottom {
+	background-color: #4e6471;
+}
+
+/****** conference ******/
+#main__conference {
+	background-color: #ffa624;
+}
+
+#main__conference .main-card__bottom {
+	background-color: #f6810f;
+}
+
+/****** connect ******/
+#main__connect {
+	background-color: #f64c3b;
+}
+
+#main__connect .main-card__bottom {
+	background-color: #da3136;
+}
+
+/****** portfolio ******/
+#main__portfolio {
+	background-color: #32ac6f;
+}
+
+#main__portfolio .main-card__bottom {
+	background-color: #0c914f;
+}
+
+/****** files ******/
+#main__files {
+	background-color: #01bbd4;
+}
+
+#main__files .main-card__bottom {
+	background-color: #0298b0;
+}
+
+/******* facebook ******/
+#main__facebook {
+	background-color: #f5f5f5;
+}
+
+#main__facebook .main-card__bottom {
+	background-color: #999999;
+}
+

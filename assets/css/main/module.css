@@ -1,0 +1,81 @@
+/****** main module ******/
+
+/****** main card ******/
+.main-card {
+	color: #fff;
+}
+
+.main-card__top {
+	height: 280px;
+	padding: 20px 0;
+}
+
+.main-card__top .valign {
+	margin: 0 auto;
+}
+
+.main-card__top img {
+	max-width: 150px;
+}
+
+.main-card__bottom {
+	line-height: 40px;
+	text-transform: uppercase;
+}
+
+/****** register card ******/
+.register-card-wrapper {
+	text-align: center;
+}
+
+.register-card {
+	display: inline-block;
+	position: relative;
+	width: 220px;
+	padding: 30px 15px 25px;
+	margin: 20px;
+	text-align: center;
+	font-size: 14px;
+	background-color: #ecf0f1;
+	border-radius: 5px;
+}
+
+.register-card__select {
+	display: none;
+	position: absolute;
+	top: -2px;
+	right: -2px;
+}
+
+.register-card:hover .register-card__select {
+	display: block;
+	-webkit-transition: 0.2s ease-out;
+	-moz-transition: 0.2s ease;
+	-o-transition: 0.2s ease;
+	transition: 0.2s ease;
+}
+
+.register-card__character {
+	width: 100px;
+	height: 100px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+}
+
+.register-card__type {
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.register-card__description {
+	margin-bottom: 10px;
+}
+
+.register-card__button {
+	text-transform: uppercase;
+	width: 100%;
+	height: 35px;
+	border-radius: 8px;
+}
