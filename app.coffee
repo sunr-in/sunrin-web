@@ -8,10 +8,12 @@ config = require './config.json'
 
 # middlewares
 serveStatic = require 'serve-static'
+nunjucks = require 'nunjucks'
 sass = require 'node-sass-middleware'
 
 # init app
 app = express()
+
 app.use serveStatic __dirname + '/public'
 app.use sass
   src: __dirname + '/public/css'
@@ -19,6 +21,11 @@ app.use sass
   prefix: '/css'
   debug: true
   force: true
+
+nunjucks.configure 'views/',
+  autoescape: true,
+  express: app
+
 
 app.get '/', (req, res) ->
   res.sendFile __dirname + '/public/index.html'
