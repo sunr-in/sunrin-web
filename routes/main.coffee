@@ -11,4 +11,3 @@ module.exports = (app) ->
 loggedIn = (req, res, next) ->
   if req.isAuthenticated() then next()
   else res.redirect '/'
-}
