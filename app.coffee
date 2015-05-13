@@ -1,4 +1,6 @@
 #!/usr/bin/env coffee
+passport = require 'passport'
+nunjucks = require 'nunjucks'
 express = require 'express'
 calcium = require 'calcium'
 fs = require 'fs'
@@ -8,12 +10,17 @@ config = require './config.json'
 
 # middlewares
 serveStatic = require 'serve-static'
-nunjucks = require 'nunjucks'
 sass = require 'node-sass-middleware'
 
 # init app
 app = express()
 
+app.use require('cookie-parser')()
+app.use require('body-parser')()
+app.use require('express-session')
+  secret: config.sessionSecret
+app.use passport.initialize()
+app.use passport.session()
 app.use serveStatic __dirname + '/public'
 app.use sass
   src: __dirname + '/public/css'
