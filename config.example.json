@@ -1,0 +1,7 @@
+{
+  "listen": 8080,
+  "facebook": {
+    "clientID": "",
+    "clientSecret": ""
+  }
+}

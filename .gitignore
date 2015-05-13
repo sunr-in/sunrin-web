@@ -1,8 +1,8 @@
 # layout images
 layouts/
 
-# app.js
-app.js
+# auth token
+config.json
 
 # npm
 node_modules/
