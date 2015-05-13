@@ -1,5 +1,6 @@
 {
   "listen": 8080,
+  "sessionSecret": "",
   "facebook": {
     "clientID": "",
     "clientSecret": ""
