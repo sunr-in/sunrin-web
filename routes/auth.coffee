@@ -31,7 +31,7 @@ module.exports = (app, passport) ->
   app.get '/login_success', checkAuth, (req, res) ->
     res.send req.user
 
-  app.get '/logout', (req, res) ->
+  app.get '/auth/logout', (req, res) ->
     req.logout()
     res.redirect '/'
 
