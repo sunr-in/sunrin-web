@@ -15,7 +15,7 @@ module.exports = (app, passport) ->
       console.dir arguments # accessToken, refreshToken, profile
       callback null, callback
 
-  checkAuth = (req, res, next) ->
+  loggedIn = (req, res, next) ->
     if req.isAuthenticated()
       next()
     else
@@ -28,7 +28,7 @@ module.exports = (app, passport) ->
       successRedirect: '/login_success',
       failureRedirect: '/login_fail'
 
-  app.get '/login_success', checkAuth, (req, res) ->
+  app.get '/login_success', loggedIn, (req, res) ->
     res.send req.user
 
   app.get '/auth/logout', (req, res) ->
