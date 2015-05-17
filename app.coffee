@@ -32,6 +32,7 @@ nunjucks.configure 'views',
   autoescape: true,
   express: app
 
+require('./routes/auth.coffee') app, passport
 require('./routes/main.coffee') app
 
 # listen
