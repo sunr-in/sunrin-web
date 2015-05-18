@@ -1954,9 +1954,7 @@ input[type="search"]::-webkit-search-decoration {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  border: none; }
 
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
@@ -5809,8 +5807,7 @@ button.btn-floating {
   width: 2.5em;
   height: 2.5em;
   line-height: 2.5em;
-  border-radius: 50%;
-  -webkit-mask-image: none; }
+  border-radius: 50%; }
 
 .waves-block {
   display: block; }
