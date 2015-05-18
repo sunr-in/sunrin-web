@@ -4,16 +4,16 @@ facebook = require 'passport-facebook'
 module.exports = (app, passport) ->
 
   passport.serializeUser (user, callback) ->
-    done null, user
-  
+    callback null, user
+
   passport.deserializeUser (user, callback) ->
-    done null, user
-  
+    callback null, user
+
   passport.use new facebook.Strategy config.facebook,
     (accessToken, refreshToken, profile, callback) ->
       # todo: save this
-      console.dir arguments # accessToken, refreshToken, profile
-      callback null, callback
+      console.dir profile
+      callback null, profile
 
   loggedIn = (req, res, next) ->
     if req.isAuthenticated()
