@@ -1,44 +1,90 @@
 {% extends "../base.html" %}
 {% block link %}
 	<link rel="stylesheet" href="/css/membership/module.css">
-	<link rel="stylesheet" href="/css/membership/theme.css">
 {% endblock %}
 {% block header %}
 	{% include "./header_membership.html" %}
 {% endblock %}
 {% block content %}
-	<div id="membership-select-wrapper">
-		<p id="welcome" class="grey-text">환영합니다! <span class="teal-text text-accent-4">사용자</span>는 지금?</p>
-		<div class="membership-card-wrapper">
-			<div class="membership-card">
-				<img class="membership-card__select" src="/img/membership/membership_select.svg">
-				<div class="membership-card__character">
-					<img src="/img/membership/membership_student.svg">
+	<p id="welcome" class="grey-text">환영합니다! <span class="teal-text text-accent-4">사용자</span>는 지금?</p>
+	<ul id="membership-select">
+		<li>
+			<div class="membership-select__header">
+				<div class="membership-select__header__character left">
+					<img src="/img/membership/membership_student.svg" height="60">
 				</div>
-				<p class="membership-card__type">재학생</p>
-				<p class="membership-card__description">현재 선린인터넷고등학교에<br>재학중이신 분!</p>
-				<button class="membership-card__button waves-effect waves-light btn teal accent-4 white-text" type="button">Go</button>
-			</div>
-			<div class="membership-card">
-				<img class="membership-card__select" src="/img/membership/membership_select.svg">
-				<div class="membership-card__character">
-					<img src="/img/membership/membership_graduate.svg">
+				<div class="membership-select__header__description left">
+					<h5>재학생</h5>
+					<p>선린의 미래를 이끌어 나갈 새싹입니다!</p>
 				</div>
-				<p class="membership-card__type">졸업생</p>
-				<p class="membership-card__description">선린인터넷고등학교를<br>졸업하신 분!</p>
-				<button class="membership-card__button waves-effect waves-light btn teal accent-4 white-text" type="button">Go</button>
+				<i class="small mdi-navigation-more-vert membership-select__header__select right"></i>
 			</div>
-		</div>
-	</div>
-	<!-- <div id="membership-form-wrapper">
-		<div class="membership-form">
-			<div class="membership-form__header teal accent-4">
-
+			<div class="membership-select__body">
+				<div class="membership-select__body__arrow"></div>
+				<form class="group" method="POST" action="/membership/student">
+					<div class="row">
+						<fieldset>
+							<label for="student_division">학과</label>
+							<select id="student_division" name="division">
+								<option value="" disabled selected>학과를 선택하세요</option>
+								<option value="1">정보통신과</option>
+								<option value="2">웹운영과</option>
+								<option value="3">테크노경영과</option>
+								<option value="4">멀티미디어과</option>
+							</select>
+						</fieldset>
+						<fieldset>
+							<label for="student_num">학번</label>
+							<input id="student_num" type="text" name="num" placeholder="학번을 입력하세요">
+						</fieldset>
+					</div>
+					<button class="btn wave-effect amber accent-3 right">가입하기</button>
+				</form>
 			</div>
-			<form class="membership-form__form" method="POST" action="">
-
-				<button class="waves-effect waves-light btn yellow darken-1" type="submit">Send</button>
-			</form>
-		</div>
-	</div> -->
+		</li>
+		<li>
+			<div class="membership-select__header">
+				<div class="membership-select__header__character left">
+					<img src="/img/membership/membership_graduate.svg" height="60">
+				</div>
+				<div class="membership-select__header__description left">
+					<h5>졸업생</h5>
+					<p>선린의 자랑스러운 졸업생입니다!</p>
+				</div>
+				<i class="small mdi-navigation-more-vert membership-select__header__select right"></i>
+			</div>
+			<div class="membership-select__body">
+				<div class="membership-select__body__arrow"></div>
+				<form class="group" method="POST" action="/membership/graduate">
+					<div class="row">
+						<fieldset>
+							<label for="graduate_division">학과</label>
+							<select id="graduate_division" name="division">
+								<option value="" disabled selected>학과를 선택하세요</option>
+								<option value="1">정보통신과</option>
+								<option value="2">웹운영과</option>
+								<option value="3">테크노경영과</option>
+								<option value="4">멀티미디어과</option>
+							</select>
+						</fieldset>
+						<fieldset>
+							<label for="graduate_num">학번</label>
+							<input id="graduate_num" type="text" name="num" placeholder="학번을 입력하세요">
+						</fieldset>
+						<fieldset>
+							<label for="graduate_job">직업</label>
+							<select id="graduate_job" name="job">
+								<option value="" disabled selected>직업를 선택하세요</option>
+								<option value="1">게임개발자</option>
+								<option value="2">웹개발자</option>
+								<option value="3">은행텔러</option>
+								<option value="4">디자이너</option>
+							</select>
+						</fieldset>
+					</div>
+					<button class="btn wave-effect amber accent-3 right">가입하기</button>
+				</form>
+			</div>
+		</li>
+	</ul>
 {% endblock %}

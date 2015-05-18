@@ -1,9 +1,6 @@
 /****** membership module ******/
 
-@import 'materialize';
-@import 'master';
-
-$form-color: #ecf0f1;
+@import "materialize";
 
 #welcome {
 	text-align: center;
@@ -11,73 +8,70 @@ $form-color: #ecf0f1;
 	font-size: 20px;
 }
 
-/****** membership card ******/
-.membership-card-wrapper {
-	text-align: center;
+/****** membership select ******/
+#membership-select {
+	max-width: 500px;
+	margin: 0 auto;
+	color: #666565;
 }
 
-.membership-card {
-	display: inline-block;
-	position: relative;
-	width: 220px;
-	padding: 30px 15px 25px;
-	margin: 20px;
-	text-align: center;
-	font-size: 14px;
-	background-color: $form-color;
-	border-radius: 5px;
+#membership-select > li {
+	margin: 15px 0;
+	border-radius: 2px;
 }
 
-.membership-card:hover {
-	@include transition(0.3s);
+// membership select header
+.membership-select__header {
 	@extend .z-depth-1;
+	padding: 16px;
+	height: 60px;
+	background-color: #ecf0f1;
+	box-sizing: content-box;
+	cursor: pointer;
 }
 
-.membership-card__select {
-	opacity: 0;
-	position: absolute;
-	top: -2px;
-	right: -2px;
-}
-
-.membership-card:hover .membership-card__select {
-	@include transition(0.3s);
-	opacity: 1;
-}
-
-.membership-card__character {
-	width: 100px;
-	height: 100px;
+.membership-select__header__character {
+	width: 60px;
+	height: 60px;
 	background-color: #fff;
 	border-radius: 50%;
-	margin: 0 auto 20px;
 }
 
-.membership-card__type {
+.membership-select__header__description {
+	padding-top: 6px;
+	padding-left: 15px;
+}
+
+.membership-select__header__description h5 {
+	margin: 0;
+	font-size: 18px;
 	font-weight: 500;
-	font-size: 20px;
-	margin-bottom: 5px;
+	color: #3b3a3a;
 }
 
-.membership-card__description {
-	margin-bottom: 10px;
+.membership-select__header__select {
+	line-height: 60px;
 }
 
-.membership-card__button {
-	width: 100%;
-}
-
-/******* membership form *******/
-.membership-form {
-	max-width: 400px;
-	margin: 50px auto;
-	background-color: $form-color;
-}
-
-.membership-form__header {
-	height: 40px;
-}
-
-.membership-form__form {
+// memberhship select body 
+.membership-select__body {
+	@extend .z-depth-1;
+	display: none;
+	position: relative;
+	margin: 30px 0;
+	border-top: 30px solid color("teal", "accent-4");
+	background-color: #ecf0f1;
 	padding: 20px;
+}
+
+
+.membership-select__body__arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid color("teal", "accent-4");
+	top: -45px;
+	left: 30px;
 }
