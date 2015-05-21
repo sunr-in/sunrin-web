@@ -12,5 +12,9 @@ node_modules/
 Thumbs.db
 Desktop.ini
 
+# rendered css files
+public/css/*.css
+public/css/**/*.css
+
 *.map
 **/.sass-cache/
